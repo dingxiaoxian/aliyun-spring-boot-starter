@@ -2,12 +2,11 @@ package tech.xiaoxian.aliyun.sts;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import tech.xiaoxian.aliyun.common.constant.AliyunPrefix;
+import tech.xiaoxian.aliyun.common.model.AccessKeyProperties;
 
 @ConfigurationProperties(AliyunPrefix.STS)
-public class AliyunStsProperties {
+public class AliyunStsProperties extends AccessKeyProperties {
     private String endpoint;
-    private String accessKeyId;
-    private String accessKeySecret;
     private String roleArn;
     private String regionId;
     private Long durationSeconds;
@@ -18,22 +17,6 @@ public class AliyunStsProperties {
 
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
-    }
-
-    public String getAccessKeyId() {
-        return accessKeyId;
-    }
-
-    public void setAccessKeyId(String accessKeyId) {
-        this.accessKeyId = accessKeyId;
-    }
-
-    public String getAccessKeySecret() {
-        return accessKeySecret;
-    }
-
-    public void setAccessKeySecret(String accessKeySecret) {
-        this.accessKeySecret = accessKeySecret;
     }
 
     public String getRoleArn() {

@@ -18,11 +18,13 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":aliyun-common"))
     // Spring dependencies
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     api("org.springframework.boot:spring-boot-autoconfigure")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
+    // oss 依赖
+    compileOnly("com.aliyun.oss:aliyun-sdk-oss:3.16.1")
 }
 
 tasks {
